@@ -31,6 +31,7 @@ function calculateBtnClicked(){
             billTotal += 0.75;
         }
     }
+    //round to two decimals
      var roundedBillTotal = billTotal.toFixed(2);
     billTotalElement.innerHTML = roundedBillTotal;
 
@@ -38,3 +39,9 @@ function calculateBtnClicked(){
 }
 
 //link the function to a click event on the calculate button
+
+calculateBtn.addEventListener('click', function(){
+    calculateBtnClicked();
+    colorWarning();
+
+});
