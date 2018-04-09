@@ -1,7 +1,7 @@
 //get a reference to the calculate button
 var billStringField = document.querySelector(".billString");
 //get a reference to the billTotal element
-
+var calculateBtn = document.querySelector(".calculateBtn")
 //get a reference to the billString
 
 //create the function that will be called when the calculate button is pressed
