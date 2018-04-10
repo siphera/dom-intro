@@ -42,5 +42,12 @@ RadioTotalAddBtn.addEventListener('click', function(){
 
 
 
-  
+    //color the total according to the total
+    if (totalCostradio >= 50){
+
+        totalCostElem.classList.add("danger");
+    }
+    else if (totalCostradio >= 30){
+        totalCostElem.classList.add("warning");
+    }
 });
