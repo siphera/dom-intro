@@ -1,5 +1,5 @@
-var callsTotalradio = 0;
-var smsTotalradio = 0;
+var callsTotalradio = 0.00;
+var smsTotalradio = 0.00;
 
 // get a reference to the sms or call radio buttons
 var callsTotalElem = document.querySelector(".callTotalTwo");
