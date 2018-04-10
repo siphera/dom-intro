@@ -1,5 +1,5 @@
-var callsTotaltext = 0;
-var smsTotaltext = 0;
+var callsTotaltext = 0.00;
+var smsTotaltext = 0.00;
 
 // get a reference to the textbox where the bill type is to be entered
 var billText = document.querySelector(".billTypeText");
