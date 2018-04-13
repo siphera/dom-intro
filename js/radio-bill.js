@@ -51,3 +51,13 @@ RadioTotalAddBtn.addEventListener('click', function(){
         totalCostElem.classList.add("warning");
     }
 });
+
+function fieldReset(){
+  document.getElementById("radioCall").checked=false;
+  document.getElementById("radioSms").checked=false;
+
+  callsTotalElem.innerHTML = 0.00;
+  smsTotalElem.innerHTML = 0.00;
+  totalCostElem.innerHTML = 0.00;
+
+   }
