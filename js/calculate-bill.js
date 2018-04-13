@@ -47,16 +47,26 @@ calculateBtn.addEventListener('click', function(){
 });
 
 function colorWarning() {
+
+
        if (billTotalElement.innerHTML > 20.00 && 30.00 > billTotalElement.innerHTML ){
 
          total.classList.add("warning");
-
-         total.classList.remove("danger");
-         }
-
+       } else {
+           total.classList.remove("danger");
+       }
          if(billTotalElement.innerHTML >30.00){
-             total.classList.remove("warning");
+
              total.classList.add("danger");
+        }
+
+        else if (billTotalElement.innerHTML < 20) {
+          total.classList.remove("warning");
+          total.classList.remove("danger");
         }
          billTotalElement.innerHTML;
 }
+
+function clearContents(element) {
+  element.value = '';
+};
