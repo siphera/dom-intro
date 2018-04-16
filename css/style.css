@@ -2,8 +2,10 @@
   padding: 0.75em;
   border-radius : 0.5em;
   border : 1px solid #ddd;
+  box-shadow: 10px 10px #888888;
   height: auto;
   margin-bottom: 1em;
+  background-color: #b8cef2;
 }
 
 .warning {
