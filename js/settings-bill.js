@@ -51,12 +51,12 @@ var totalCostSettings = document.querySelector(".totalSettings");
     var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
     var billItem = checkedRadioBtn.value;
 
-    // update the correct total
+    
     if (billItem === "call"){
 
          if(totalCostbill < criticalVariable){
              callsTotalBill = callsTotalBill + callCostVariable ;
-             //totalCostbill = totalCostbill + callCostVariable;
+
             }
          if (totalCostbill > criticalVariable){
              callsTotalBill = callsTotalBill + 0 ;
@@ -73,7 +73,7 @@ var totalCostSettings = document.querySelector(".totalSettings");
              smsTotalBill = smsTotalBill + smsCostVariable ;
              //totalCostbill =  totalCostbill + smsCostVariable;
             }
-         if (totalCostbill > criticalVariable){  //Ended debbunging here
+         if (totalCostbill > criticalVariable){
              alert('over!');
              smsTotalBill = smsTotalBill + 0;
              totalCostSettings.classList.add("danger");
@@ -101,7 +101,6 @@ var totalCostSettings = document.querySelector(".totalSettings");
 
 
 
-function colorSettingsUpdate()
 {
 
     if (totalCostbill >= warningVariable){
