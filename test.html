@@ -15,7 +15,16 @@
         mocha.setup('bdd');
         var assert = chai.assert;
     </script>
-    
+    <script src="./js/calculatebill-logic.js" charset="utf-8"></script>
+    <script src="./js/textbill-logic.js" charset="utf-8"></script>
+    <script src="./js/radiobill-logic.js" charset="utf-8"></script>
+    <script src="./js/settingsbill-logic.js" charset="utf-8"></script>
+
+    <script src="./test/calculate-bill.test.js" charset="utf-8"></script>
+    <script src="./test/radio-bill.test.js" charset="utf-8"></script>
+    <script src="./test/text-bill.test.js" charset="utf-8"></script>
+    <script src="./test/settings-bill.test.js" charset="utf-8"></script>
+
     <script>
         mocha.checkLeaks();
         mocha.run();
