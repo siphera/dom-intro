@@ -1,7 +1,7 @@
 function radioBillFactoryF(){
     var callsTotalradio = 0;
     var smsTotalradio = 0;
-    //var totalCostradio = 0;
+    var totalCostradio = 0;
     
     function radioCalculate(billItem)
     {
