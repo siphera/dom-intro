@@ -1,44 +1,47 @@
-describe("The Radio Button function", function(){
+describe("Radio Button function", function(){
 
-          it("It should return the total cost (i.e : 5.50) for two calls made.", function(){
+          it("should return total cost (8.25) for three calls made.", function(){
 			 
 			 var radioTest = radioBillFactoryF();
 			 radioTest.radioCalculate("call");
 			  radioTest.radioCalculate("call");
-			
-			  
-			     assert.equal(radioTest.callTotal(), 5.50);
+              radioTest.radioCalculate("call");
+              
+			    assert.equal(radioTest.callTotal(), 8.25);
       		  	assert.equal(radioTest.smsTotal(), 0.00);
-      			assert.equal(radioTest.totalBill(), 5.50);
+      			assert.equal(radioTest.totalBill(), 8.25);
 
 
           });
 
-         it("It should return the total cost (i.e : 1.50) for two sms made.", function(){
+         it("should return total cost (2.25) for three smses made.", function(){
 
 			  	var radioTest = radioBillFactoryF();
 			 	radioTest.radioCalculate("sms");
 			  	radioTest.radioCalculate("sms");
-			
+			    radioTest.radioCalculate("sms");
 			  
-			     assert.equal(radioTest.callTotal(), 0.00);
-      		  	assert.equal(radioTest.smsTotal(), 1.50);
-      			assert.equal(radioTest.totalBill(), 1.50);
+			    assert.equal(radioTest.callTotal(), 0.00);
+      		  	assert.equal(radioTest.smsTotal(), 2.25);
+      			assert.equal(radioTest.totalBill(), 2.25);
 
 
           });
 
-          it("It should return the total cost for the sum of the  two sms and two calls (i.e 7.00)", function(){
+          it("should return total cost for the sum three sms and three calls (10.50)", function(){
 			  
 	var radioTest = radioBillFactoryF();
 			 	radioTest.radioCalculate("sms");
 			  	radioTest.radioCalculate("sms");
+                radioTest.radioCalculate("sms");
+              
 			    radioTest.radioCalculate("call");
 			    radioTest.radioCalculate("call");
+                radioTest.radioCalculate("call");
 			  
-			     assert.equal(radioTest.callTotal(), 5.50);
-      		  	assert.equal(radioTest.smsTotal(), 1.50);
-      			assert.equal(radioTest.totalBill(), 7.00);
+			    assert.equal(radioTest.callTotal(), 8.25);
+      		  	assert.equal(radioTest.smsTotal(), 2.25);
+      			assert.equal(radioTest.totalBill(), 10.50);
 
           });
 

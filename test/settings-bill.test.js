@@ -1,87 +1,85 @@
-describe("The Settings Update function", function(){
+describe("Settings Update function", function(){
 
-  it("It should return the total for a call", function(){
+  it("should return total for a call", function(){
    
       var settings = SettingBillFactory();
-      settings.sms(2.50);
       
-      settings.calls(5.00);
+      settings.sms(1.00);
+      settings.calls(2.00);
       settings.critical(10.00);
       settings.warning(5.00);
       
       settings.sumBill('call');
       
-      assert.equal(settings.sumCall(), 5.00);
+      assert.equal(settings.sumCall(), 2.00);
       assert.equal(settings.sumSms(), 0.00);
-      assert.equal(settings.sumTotal(), 5.00);
+      assert.equal(settings.sumTotal(), 2.00);
       
   });
 	
-	it("It should return the total for an sms", function(){
+	it("should return total for an sms", function(){
   
       var settings = SettingBillFactory();
-      settings.sms(2.50);
-      
-      settings.calls(5.00);
-         settings.critical(12.00);
-      settings.warning(6.00);
+        
+      settings.sms(1.00);
+      settings.calls(2.00);
+      settings.critical(20.00);
+      settings.warning(10.00);
       
       settings.sumBill('sms');
       
       assert.equal(settings.sumCall(), 0.00);
-     assert.equal(settings.sumSms(), 2.50);
-     assert.equal(settings.sumTotal(), 2.50);
+     assert.equal(settings.sumSms(), 1.00);
+     assert.equal(settings.sumTotal(), 1.00);
     
  });
 
     
- it("It should calculate the total for a call and sms", function(){
+ it("should return total for a call and sms", function(){
   
        var settings = SettingBillFactory();
-      settings.sms(2.50);
-      
-      settings.calls(5.00);
-      settings.critical(12.00);
-      settings.warning(9.00);
+     
+      settings.sms(1.00);
+      settings.calls(2.00);
+      settings.critical(20.00);
+      settings.warning(10.00);
       
       settings.sumBill('sms');
 	  settings.sumBill('call');
       
-    
-      
-      assert.equal(settings.sumCall(), 5.00);
-      assert.equal(settings.sumSms(), 2.50);
-       assert.equal(settings.sumTotal(), 7.50);
+      assert.equal(settings.sumCall(), 2.00);
+      assert.equal(settings.sumSms(), 1.00);
+       assert.equal(settings.sumTotal(), 3.00);
   });
    
- it("It should calculate total for multiple calls", function(){
+ it("should return total for multiple calls", function(){
   
    var settings = SettingBillFactory();
-      settings.sms(2.50);
-      
-      settings.calls(5.00);
-      settings.critical(15.00);
-      settings.warning(7.00);
+     
+      settings.sms(1.00);
+      settings.calls(2.00);
+      settings.critical(20.00);
+      settings.warning(10.00);
       
       settings.sumBill('call');
 	  settings.sumBill('call');
 	  settings.sumBill('call');
 	  settings.sumBill('call');
      
-     assert.equal(settings.sumCall(), 20.00);
+     assert.equal(settings.sumCall(), 8.00);
       assert.equal(settings.sumSms(), 0.00);
-       assert.equal(settings.sumTotal(), 20.00);
+       assert.equal(settings.sumTotal(), 8.00);
   
  });
    
- it("It should calculate total for multiple sms", function(){
+ it("should return total for multiple sms", function(){
   
    var settings = SettingBillFactory();
-      settings.sms(2.50);
-      
-      settings.calls(5.00);
+     
+      settings.sms(1.00);
+      settings.calls(2.00);
       settings.critical(20.00);
-      settings.warning(18.00);
+      settings.warning(10.00);
       
       settings.sumBill('sms');
 	     settings.sumBill('sms');
@@ -89,8 +87,8 @@ describe("The Settings Update function", function(){
 	      settings.sumBill('sms');
      
      assert.equal(settings.sumCall(), 0.00);
-      assert.equal(settings.sumSms(), 10.00);
-       assert.equal(settings.sumTotal(), 10.00);
+      assert.equal(settings.sumSms(), 4.00);
+       assert.equal(settings.sumTotal(), 4.00);
   
  });
 
