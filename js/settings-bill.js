@@ -1,6 +1,6 @@
 
 
-document.addEventListener('DOMContentLoaded', function() 
+document.addEventListener('DOMContentLoaded', function()
 {
 // get a reference to the sms or call radio buttons
 var callsTotalSettings = document.querySelector(".callTotalSettings");
@@ -34,60 +34,58 @@ var settingsUpdate = SettingBillFactory();
         var newWarningSetting= warningLevel.value;
 		settingsUpdate.warning(newWarningSetting);
         var newCriticalSetting = criticalLevel.value;
-		settingsUpdate.critical(newCriticalSetting);	
+		settingsUpdate.critical(newCriticalSetting);
     }
 
-	
+
 function addBill()
 {
 	 var settingRadioItem = document.querySelector("input[name='billItemTypeWithSettings']:checked");
-	
+
 	if(settingRadioItem)
 	   {
 	   	 var Billtype = settingRadioItem.value.trim();
 		 settingsUpdate.sumBill(Billtype);
-		   
+
 	   }
-	
+
 	 callsTotalSettings.innerHTML = settingsUpdate.sumCall();
 	 smsTotalSettings.innerHTML = settingsUpdate.sumSms();
-            totalCostSettingsElem.innerHTML = settingsUpdate.sumTotal();	
-	 	
+            totalCostSettingsElem.innerHTML = settingsUpdate.sumTotal();
+
 }
 
 
-function colorSettingsUpdate() 
+function colorSettingsUpdate()
 {
-	
-    
+
+
    	var colorWarningTotal = parseFloat(settingsUpdate.sumTotal());
 	var colorWarningLevel = parseFloat(settingsUpdate.getWarning());
-	
+
 	var colorCriticalLevel = parseFloat(settingsUpdate.getCritical());
     console.log(colorCriticalLevel);
-         
+
     if (colorWarningTotal  >= colorWarningLevel)
 	{
         totalCostSettingsElem.classList.remove("danger");
         totalCostSettingsElem.classList.add("warning");
-        
-        //totalCostSettingsElem.innerHTML = settingsUpdate.sumTotal();	
-        
+
+
     }
-       
+
     if ( colorWarningTotal  >= colorCriticalLevel)
 	{
-        // adding the danger class will make the text red
-        totalCostSettingsElem.classList.remove("warning");
-        totalCostSettingsElem.classList.add("danger"); 
-        
 
-		// BillTotalAddBtn.disabled = false;
+        totalCostSettingsElem.classList.remove("warning");
+        totalCostSettingsElem.classList.add("danger");
+
+
     }
-    
-    
-  
- 
+
+
+
+
 }
 
 //add an event listener for when the add button is pressed
